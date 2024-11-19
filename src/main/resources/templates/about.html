@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" >
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>About Page</title>
+</head>
+<body>
+
+<h1 th:text="${title}"> This is About page</h1>
+<h1>Hello <span th:text="${name}"></span></h1>
+<div th:replace="${login} ? ~{base :: parent(~{::#main_content})} : ~{base :: test(~{::#content})}">
+
+        <section id="content">
+            <h1>User is not logged in</h1>
+        <h1>This is My GitHub Profile : <a th:href="${gitHub}">click here to visit</a></h1>
+        <h1>Which Language do you like to code : <span th:text="${subject}"></span></h1>
+        </section>
+
+        <section id="main_content">
+            <h1>User is Logged In</h1>
+            <h1>This is main content</h1>
+        </section>
+
+</div>
+</body>
+</html>

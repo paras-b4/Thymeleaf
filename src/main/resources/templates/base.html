@@ -1,0 +1,8 @@
+<div th:fragment="parent(content)" xmlns:th="http://www.w3.org/1999/xhtml">
+    <h1>This is a Base Page </h1>
+
+    <p th:replace="${content}"></p>
+</div>
+<div th:fragment="test(content)" xmlns:th="http://www.w3.org/1999/xhtml">
+    <div th:replace="content"></div>
+</div>
